@@ -4,6 +4,7 @@ import com.kth.book.springboot.domain.posts.Posts;
 import com.kth.book.springboot.domain.posts.PostsRepository;
 import com.kth.book.springboot.web.dto.PostsSaveRequestDto;
 import com.kth.book.springboot.web.dto.PostsUpdateRequestDto;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,10 @@ class PostsApiControllerTest {
     @Autowired
     private PostsRepository postsRepository;
 
+    @AfterEach
+    void clear() {
+        postsRepository.deleteAll();
+    }
 
     @Test
     void Posts_등록된다() throws Exception {

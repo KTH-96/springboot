@@ -1,5 +1,6 @@
 package com.kth.book.springboot.domain.posts;
 
+import com.kth.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity//기본 생성자는 필수 (JPA가 엔티티 객체 생성 시 기본 생성자를 사용)
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id//해당 테이블 pk
     @GeneratedValue(strategy = GenerationType.IDENTITY)//pk생성 규칙
     private Long id;
