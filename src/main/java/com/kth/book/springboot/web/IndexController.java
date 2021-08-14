@@ -1,5 +1,6 @@
 package com.kth.book.springboot.web;
 
+import com.kth.book.springboot.config.auth.dto.SessionUser;
 import com.kth.book.springboot.service.posts.PostsService;
 import com.kth.book.springboot.web.dto.PostsResponseDto;
 import com.kth.book.springboot.web.dto.PostsSaveRequestDto;
@@ -11,14 +12,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
     private final PostsService postsService;
-
+    private final HttpSession httpSession;
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if(user != null){
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
@@ -33,4 +41,5 @@ public class IndexController {
         model.addAttribute("posts", dto);
         return "posts-update";
     }
+
 }
