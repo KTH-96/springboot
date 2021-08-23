@@ -36,6 +36,8 @@ class PostsApiControllerTest {
     @Autowired
     private PostsRepository postsRepository;
 
+
+
     @AfterEach
     void clear() {
         postsRepository.deleteAll();
