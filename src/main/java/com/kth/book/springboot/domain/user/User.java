@@ -2,12 +2,12 @@ package com.kth.book.springboot.domain.user;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 public class User {
 

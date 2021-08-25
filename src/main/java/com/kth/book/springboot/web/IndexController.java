@@ -23,9 +23,10 @@ public class IndexController {
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
-
+        //CustomOAuth2UserService에서 로그인 성공시 세션에 SessionUser를 저장 하도록 구성
+        //즉 로그인 성공시  httpSession.getAttribute("user")에서 값을 가져올 수 있다
         if(user != null){
-            model.addAttribute("userName", user.getName());
+            model.addAttribute("userName", user.getName());//정보없으면 로그인 버튼
         }
         return "index";
     }
