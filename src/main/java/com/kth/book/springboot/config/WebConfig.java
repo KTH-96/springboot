@@ -10,6 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Configuration
+//LoginUserArgumentResolver가 스프링에 인식 될 수있도록 WebMvcConfigurer추가
 public class WebConfig implements WebMvcConfigurer {
     private final LoginUserArgumentResolver loginUserArgumentResolver;
 
