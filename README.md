@@ -16,4 +16,7 @@ spring security?
 JpaRepository<T,A>  
 
 ##설정
-스프링 부트에서 application-xxx.properties으로 만들면 xxx라는 이름의 profile생성되서 profile=xxx로 관리 가능  
+스프링 부트에서 application-xxx.properties으로 만들면 xxx라는 이름의 profile생성되서 profile=xxx로 관리 가능
+
+##AWS
+AWS란?
