@@ -24,3 +24,6 @@ xxx라는 이름의 profile생성되서 profile=xxx로 관리 가능
 
 ##AWS
 AWS란?
+
+##상식  
+Generic타입?
